@@ -1,0 +1,259 @@
+@use 'sass:color';
+
+// common
+@use 'variables';
+@use 'reset';
+@use 'document';
+@use 'common';
+@use 'animations';
+@use 'flexbox';
+@use 'images';
+@use 'forms';
+@use 'popover';
+@use 'type';
+@use 'icons';
+
+// app root
+.app-wrap {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  width: 100%;
+  height: 100vh;
+  max-height: var(--height, 100vh);
+}
+
+// player container
+.player-wrap {
+  display: block;
+  overflow: hidden;
+  position: relative;
+  flex: 1;
+  width: 100%;
+  height: var(--height, 100vh);
+  background-color: variables.$colorDocumentDark;
+
+  & > .player-bg,
+  & > .player-canvas {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  & > .player-bg {
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.4;
+    z-index: 1;
+  }
+
+  & > .player-canvas {
+    z-index: 2;
+  }
+
+  // @media #{variables.$screenMedium} {
+  //   margin: 0 (variables.$padSpace * 2);
+  //   max-width: 1080px;
+  //   height: calc(var(--height, 100vh) - (#{variables.$padSpace} * 4));
+  //   max-height: 700px;
+  //   border-radius: variables.$lineJoin;
+  //   box-shadow: variables.$shadowContainer;
+  // }
+}
+
+// player layout container
+.player-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: stretch;
+  height: 100%;
+  position: relative;
+  z-index: 3;
+
+  .player-header,
+  .player-content,
+  .player-footer {
+    position: relative;
+  }
+
+  .player-header,
+  .player-footer {
+    padding: 0 variables.$padSpace;
+    height: variables.$headerHeight;
+    min-height: variables.$headerHeight;
+    // background-color: $colorCard;
+  }
+
+  .player-header {
+    & > h2 {
+      color: variables.$colorPrimary;
+
+      i {
+        vertical-align: bottom;
+      }
+    }
+  }
+
+  .player-logo {
+    font-weight: 800;
+    letter-spacing: -0.05em;
+  }
+
+  .player-content {
+    flex: 1;
+    height: 100%;
+    overflow: hidden;
+    overflow-y: auto;
+    padding: variables.$padSpace;
+    @include variables.customScrollbar;
+
+    & > section {
+      margin: auto 0; // prevent vertical aligned flex item from overflowing
+    }
+
+    @media #{variables.$screenMedium} {
+      padding: variables.$padSpace (variables.$padSpace * 2);
+    }
+  }
+}
+
+// player greeting message
+.player-greet {
+  flex: 1;
+
+  @media #{variables.$screenMedium} {
+    flex: 0.5;
+  }
+}
+
+// player tracklist
+.player-tracklist {
+  display: block;
+  position: relative;
+  list-style: none;
+
+  & > li + li {
+    margin-top: variables.$padSpace;
+  }
+}
+
+// player footer controls
+.player-controls {
+  position: relative;
+}
+
+// player stations sidebar
+.player-stations {
+  position: absolute;
+  overflow: hidden;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: variables.$lineJoin;
+  background-color: rgba(variables.$colorOverlay, 0);
+  pointer-events: none;
+  z-index: -1;
+
+  .player-stations-sidebar {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: stretch;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 100vw;
+    min-height: 100%;
+    max-height: 100%;
+    background-color: color.adjust(variables.$colorDocumentDark, $lightness: 2%);
+
+    @media #{variables.$screenSmall} {
+      width: 420px;
+    }
+
+    .player-stations-header,
+    .player-stations-footer {
+      padding: 0 variables.$padSpace;
+      min-height: variables.$headerHeight;
+      box-shadow: 0 0 3px rgba(black, 0.3);
+    }
+
+    .player-stations-list {
+      display: block;
+      list-style: none;
+      overflow: hidden;
+      overflow-y: auto;
+      margin-left: -10px;
+      padding-left: 10px;
+      flex: 1;
+      @include variables.customScrollbar;
+
+      .player-stations-list-item {
+        position: relative;
+        padding: variables.$padSpace;
+        background-color: rgba(black, 0.1);
+        cursor: pointer;
+
+        &:nth-child(odd) {
+          background-color: rgba(black, 0.18);
+        }
+
+        &:hover {
+          background-color: rgba(black, 0);
+        }
+
+        &:focus,
+        &:active,
+        &.active {
+          background-color: color.adjust(variables.$colorDocumentDark, $lightness: 2%);
+
+          .player-stations-list-title {
+            color: variables.$colorPrimary;
+          }
+        }
+      }
+    }
+  }
+
+  // bring to front
+  &.active {
+    pointer-events: auto;
+    z-index: 1000;
+  }
+
+  // slide out
+  &.visible {
+    background-color: variables.$colorOverlay;
+
+    .player-stations-sidebar {
+      transform: translate3d(0, 0, 0);
+      transform: translateX(-100vw);
+
+      @media #{variables.$screenSmall} {
+        transform: translateX(-420px);
+        box-shadow: variables.$shadowOverlay;
+      }
+    }
+
+    .player-stations-list-item.active:before {
+      display: block;
+      position: absolute;
+      transition: none;
+      transform: translateY(-50%);
+      top: 50%;
+      left: -10px;
+      border-top: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+      border-right: 10px solid color.adjust(variables.$colorDocumentDark, $lightness: 2%);
+      content: '';
+    }
+  }
+}

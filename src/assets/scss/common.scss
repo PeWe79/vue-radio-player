@@ -1,0 +1,151 @@
+@use 'sass:color';
+
+@use 'variables';
+
+// media query helpers
+.if-small {
+  display: none;
+
+  @media #{variables.$screenSmall} {
+    display: initial;
+  }
+}
+
+.if-medium {
+  display: none;
+
+  @media #{variables.$screenMedium} {
+    display: initial;
+  }
+}
+
+.if-large {
+  display: none;
+
+  @media #{variables.$screenLarge} {
+    display: initial;
+  }
+}
+
+// not rendered
+.hidden,
+[hidden],
+[v-cloak] {
+  display: none;
+}
+
+// visible but not usable
+.disabled,
+[disabled] {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+// clickable elms
+.clickable {
+  cursor: pointer;
+}
+
+// common card style
+.card {
+  padding: variables.$padSpace;
+  background-image: radial-gradient(ellipse at top left, rgba(black, 0.5) 0%, rgba(black, 0) 90%);
+  border-radius: variables.$lineJoin;
+
+  .heading {
+    margin: 0 0 .5rem 0;
+  }
+}
+
+// hover state on text elements
+.hover-text {
+  &:hover {
+    color: color.adjust(variables.$colorSecondary, $lightness: 10%);
+  }
+}
+
+// focus state on text elements
+.focus-text {
+
+  &:focus,
+  &:active {
+    text-shadow: variables.$focusText;
+  }
+}
+
+// focus state on box elements
+.focus-box {
+
+  &:focus,
+  &:active {
+    box-shadow: variables.$focusBox;
+  }
+}
+
+// margin helpers
+.push-top {
+  margin-top: variables.$padSpace;
+}
+
+.push-right {
+  margin-right: variables.$padSpace;
+}
+
+.push-bottom {
+  margin-bottom: variables.$padSpace;
+}
+
+.push-left {
+  margin-left: variables.$padSpace;
+}
+
+.push-all {
+  margin: variables.$padSpace;
+}
+
+// padding helpers
+.pad-top {
+  padding-top: variables.$padSpace;
+}
+
+.pad-right {
+  padding-right: variables.$padSpace;
+}
+
+.pad-bottom {
+  padding-bottom: variables.$padSpace;
+}
+
+.pad-left {
+  padding-left: variables.$padSpace;
+}
+
+.pad-all {
+  padding: variables.$padSpace;
+}
+
+// border helpers
+.border-top {
+  border-top: variables.$lineWidth variables.$lineStyle variables.$lineColor;
+}
+
+.border-right {
+  border-right: variables.$lineWidth variables.$lineStyle variables.$lineColor;
+}
+
+.border-bottom {
+  border-bottom: variables.$lineWidth variables.$lineStyle variables.$lineColor;
+}
+
+.border-left {
+  border-left: variables.$lineWidth variables.$lineStyle variables.$lineColor;
+}
+
+// shadow helpers
+.shadow-box {
+  box-shadow: variables.$shadowPaper;
+}
+
+.shadow-text {
+  text-shadow: variables.$shadowPaper;
+}

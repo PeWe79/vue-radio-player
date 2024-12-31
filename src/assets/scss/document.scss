@@ -1,0 +1,52 @@
+@use 'variables';
+
+// document setup
+html,
+body {
+  display: block;
+  position: relative;
+  max-width: 100vw;
+  min-height: var(--height, 100vh);
+}
+
+html {
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+body {
+  font-family: variables.$fontFamily;
+  font-weight: variables.$fontWeight;
+  font-size: calc(#{variables.$fontSize} - 3px);
+  line-height: variables.$fontSpace;
+  color: variables.$colorDocumentText;
+  // background-size: cover;
+  // background-color: variables.$colorDocument;
+  // background-image: linear-gradient(
+  //     217deg,
+  //     rgba(variables.$colorPrimary, 0.8),
+  //     rgba(variables.$colorPrimary, 0) 70.71%
+  //   ),
+  //   linear-gradient(
+  //     127deg,
+  //     rgba(variables.$colorDocument, 1),
+  //     rgba(variables.$colorDocument, 0) 70.71%
+  //   ),
+  //   linear-gradient(
+  //     336deg,
+  //     rgba(variables.$colorSecondary, 0.8),
+  //     rgba(variables.$colorSecondary, 0) 70.71%
+  //   );
+
+  @media #{variables.$screenSmall} {
+    font-size: calc(#{variables.$fontSize} - 2px);
+  }
+
+  @media #{variables.$screenMedium} {
+    font-size: calc(#{variables.$fontSize} - 1px);
+  }
+
+  @media #{variables.$screenLarge} {
+    font-size: variables.$fontSize;
+  }
+}
