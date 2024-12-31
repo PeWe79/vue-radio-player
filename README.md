@@ -1,6 +1,10 @@
 # vue3-radio-player
 
-This template should help get you started developing with Vue 3 in Vite.
+This is simple Azuracast player template should help get you started developing with Vue 3 in Vite.
+
+## Demo Screenshots
+<img src="https://github.com/PeWe79/vue3-radio-player/blob/main/imgdoc/desktop.png" alt="1" width="800"/>
+<img src="https://github.com/PeWe79/vue3-radio-player/blob/main/imgdoc/mobile.png" alt="2" width="300"/>
 
 ## Recommended IDE Setup
 
