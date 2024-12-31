@@ -1,4 +1,4 @@
-@use "sass:color";
+@use 'sass:color';
 
 // spacing and padding
 $padSpace: 1rem;
@@ -37,7 +37,7 @@ $lineColor: rgba(black, 0.08);
 $lineJoin: 6px;
 
 // base font options
-$fontFamily: "Assistant", sans-serif;
+$fontFamily: 'Assistant', sans-serif;
 $fontSize: 18px;
 $fontSpace: 1.4em;
 $fontWeight: 700;
@@ -66,26 +66,26 @@ $sizeMedium: 820px;
 $sizeLarge: 1200px;
 
 // screen breakpoints
-$screenSmall: "only screen and (min-width: #{$sizeSmall})";
-$screenMedium: "only screen and (min-width: #{$sizeMedium})";
-$screenLarge: "only screen and (min-width: #{$sizeLarge})";
+$screenSmall: 'only screen and (min-width: #{$sizeSmall})';
+$screenMedium: 'only screen and (min-width: #{$sizeMedium})';
+$screenLarge: 'only screen and (min-width: #{$sizeLarge})';
 
 // customized scrollbars
 @mixin customScrollbar {
-	scrollbar-width: thin;
-	scrollbar-color: $scrollThumb $scrollTrack;
+  scrollbar-width: thin;
+  scrollbar-color: $scrollThumb $scrollTrack;
 
-	&::-webkit-scrollbar {
-		width: 10px;
-	}
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
 
-	&::-webkit-scrollbar-track {
-		background-color: $scrollTrack;
-	}
+  &::-webkit-scrollbar-track {
+    background-color: $scrollTrack;
+  }
 
-	&::-webkit-scrollbar-thumb {
-		background-color: $scrollThumb;
-		border-radius: 10px;
-		border: 2px solid $scrollTrack;
-	}
+  &::-webkit-scrollbar-thumb {
+    background-color: $scrollThumb;
+    border-radius: 10px;
+    border: 2px solid $scrollTrack;
+  }
 }

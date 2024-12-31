@@ -1,24 +1,24 @@
-@use "sass:color";
+@use 'sass:color';
 
-@use "variables";
+@use 'variables';
 
 // page reset
 *,
 *:before,
 *:after {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	outline: none;
-	background-color: transparent;
-	box-sizing: border-box;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	transition:
-		border-color variables.$fxSpeed variables.$fxEase,
-		background-color variables.$fxSpeed variables.$fxEase,
-		opacity variables.$fxSpeed variables.$fxEase,
-		transform variables.$fxSpeed variables.$fxEase;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  background-color: transparent;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition:
+    border-color variables.$fxSpeed variables.$fxEase,
+    background-color variables.$fxSpeed variables.$fxEase,
+    opacity variables.$fxSpeed variables.$fxEase,
+    transform variables.$fxSpeed variables.$fxEase;
 }
 
 // block types
@@ -48,7 +48,7 @@ ol,
 ul,
 form,
 img {
-	display: block;
+  display: block;
 }
 
 // form elements
@@ -58,34 +58,34 @@ select,
 optgroup,
 option,
 button {
-	font-family: inherit;
-	font-size: inherit;
-	font-weight: normal;
-	line-height: inherit;
-	color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: normal;
+  line-height: inherit;
+  color: inherit;
 }
 
 select,
 button {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 // links
 a,
 .link {
-	color: variables.$colorSecondary;
+  color: variables.$colorSecondary;
 
-	&:hover {
-		color: color.adjust(variables.$colorSecondary, $lightness: 10%);
-	}
+  &:hover {
+    color: color.adjust(variables.$colorSecondary, $lightness: 10%);
+  }
 }
 
 // horizontal lines
 hr {
-	display: block;
-	overflow: hidden;
-	margin: variables.$padSpace 0;
-	height: 0;
-	border: 0;
-	border-bottom: variables.$lineWidth variables.$lineStyle variables.$lineColor;
+  display: block;
+  overflow: hidden;
+  margin: variables.$padSpace 0;
+  height: 0;
+  border: 0;
+  border-bottom: variables.$lineWidth variables.$lineStyle variables.$lineColor;
 }

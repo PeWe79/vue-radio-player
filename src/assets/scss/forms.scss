@@ -42,7 +42,7 @@
   justify-content: stretch;
   color: variables.$colorBright;
 
-  &>input {
+  & > input {
     flex: 1;
     line-height: 1.5em;
     padding: 0 calc(variables.$padSpace / 2);
@@ -63,11 +63,10 @@
 @mixin sliderThumb {
   width: 1em;
   height: 1em;
-  margin: -.4em 0 0 0;
+  margin: -0.4em 0 0 0;
   border-radius: 50%;
   box-shadow: variables.$shadowPaper;
   background-color: variables.$colorBright !important;
-  ;
   transition: background variables.$fxSpeed variables.$fxEase;
   color: transparent !important;
   border-color: transparent !important;
@@ -94,11 +93,11 @@
   max-width: 6em;
   line-height: 1em;
 
-  &>input {
+  & > input {
     -webkit-appearance: none;
     appearance: none;
     width: 100%;
-    margin: 0 .5em;
+    margin: 0 0.5em;
 
     // track
     &::-webkit-slider-runnable-track {

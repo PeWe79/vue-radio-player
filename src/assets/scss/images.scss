@@ -9,7 +9,11 @@
   border-radius: 1000px;
   border: variables.$lineWidth solid variables.$colorBright;
   background-color: color.adjust(variables.$colorDocumentDark, $lightness: 10%);
-  background-image: linear-gradient(45deg, color.adjust(variables.$colorDocumentDark, $lightness: 10%), color.adjust(variables.$colorDocumentDark, $lightness: 25%));
+  background-image: linear-gradient(
+    45deg,
+    color.adjust(variables.$colorDocumentDark, $lightness: 10%),
+    color.adjust(variables.$colorDocumentDark, $lightness: 25%)
+  );
   box-shadow: variables.$shadowPaper;
 }
 
@@ -20,7 +24,11 @@
   text-indent: -1000px;
   border-radius: 5px;
   background-color: color.adjust(variables.$colorDocumentDark, $lightness: 10%);
-  background-image: linear-gradient(45deg, color.adjust(variables.$colorDocumentDark, $lightness: 10%), color.adjust(variables.$colorDocumentDark, $lightness: 25%));
+  background-image: linear-gradient(
+    45deg,
+    color.adjust(variables.$colorDocumentDark, $lightness: 10%),
+    color.adjust(variables.$colorDocumentDark, $lightness: 25%)
+  );
   box-shadow: variables.$shadowPaper;
 }
 
@@ -31,7 +39,11 @@
   text-indent: -1000px;
   border-radius: 5px;
   background-color: color.adjust(variables.$colorDocumentDark, $lightness: 10%);
-  background-image: linear-gradient(45deg, color.adjust(variables.$colorDocumentDark, $lightness: 10%), color.adjust(variables.$colorDocumentDark, $lightness: 25%));
+  background-image: linear-gradient(
+    45deg,
+    color.adjust(variables.$colorDocumentDark, $lightness: 10%),
+    color.adjust(variables.$colorDocumentDark, $lightness: 25%)
+  );
   box-shadow: variables.$shadowPaper;
 }
 

@@ -5,13 +5,13 @@
 // common absolute popover
 @keyframes popoverShow {
   0% {
-    transform: translateX(-50%) scale(.8);
+    transform: translateX(-50%) scale(0.8);
     opacity: 0;
   }
 
   35% {
     transform: translateX(-50%) scale(1.2);
-    opacity: .8;
+    opacity: 0.8;
   }
 
   100% {
@@ -51,7 +51,7 @@
       z-index: 2001;
     }
 
-    &>button {
+    & > button {
       display: block;
       width: 100%;
       text-align: left;
@@ -61,10 +61,10 @@
       background-color: rgba(variables.$colorDocumentDark, 0);
 
       &:hover {
-        background-color: rgba(variables.$colorDocumentDark, .2);
+        background-color: rgba(variables.$colorDocumentDark, 0.2);
       }
 
-      &+button {
+      & + button {
         border-top: variables.$lineWidth variables.$lineStyle variables.$lineColor;
       }
     }
@@ -89,7 +89,6 @@
         display: block;
         top: auto;
         bottom: -10px;
-        ;
         border-left: 10px solid transparent;
         border-right: 10px solid transparent;
         border-top: 10px solid color.adjust(variables.$colorDocumentDark, $lightness: 8%);
@@ -111,8 +110,8 @@
     }
   }
 
-  &:hover>.popover-box,
-  &:active>.popover-box {
+  &:hover > .popover-box,
+  &:active > .popover-box {
     display: block;
   }
 }

@@ -100,7 +100,7 @@
 @keyframes dropIn {
   0% {
     opacity: 0;
-    transform: scale(variables.$fxGrowScale );
+    transform: scale(variables.$fxGrowScale);
   }
 
   100% {
@@ -111,7 +111,7 @@
 
 .fx-drop-in {
   opacity: 0;
-  transform: scale(variables.$fxGrowScale );
+  transform: scale(variables.$fxGrowScale);
   animation-name: dropIn;
 }
 
@@ -119,7 +119,7 @@
 @keyframes zoomIn {
   0% {
     opacity: 0;
-    transform: scale(variables.$fxShrinkScale );
+    transform: scale(variables.$fxShrinkScale);
   }
 
   100% {
@@ -130,7 +130,7 @@
 
 .fx-zoom-in {
   opacity: 0;
-  transform: scale(variables.$fxShrinkScale );
+  transform: scale(variables.$fxShrinkScale);
   animation-name: zoomIn;
 }
 
@@ -143,7 +143,7 @@
 
   100% {
     opacity: 0;
-    transform: scale(variables.$fxShrinkScale );
+    transform: scale(variables.$fxShrinkScale);
   }
 }
 
@@ -157,7 +157,7 @@
 @keyframes slideLeft {
   0% {
     opacity: 0;
-    transform: translateX(variables.$fxSlideDist );
+    transform: translateX(variables.$fxSlideDist);
   }
 
   100% {
@@ -168,7 +168,7 @@
 
 .fx-slide-left {
   opacity: 0;
-  transform: translateX(variables.$fxSlideDist );
+  transform: translateX(variables.$fxSlideDist);
   animation-name: slideLeft;
 }
 
@@ -195,7 +195,7 @@
 @keyframes slideUp {
   0% {
     opacity: 0;
-    transform: translateY(variables.$fxSlideDist );
+    transform: translateY(variables.$fxSlideDist);
   }
 
   100% {
@@ -206,7 +206,7 @@
 
 .fx-slide-up {
   opacity: 0;
-  transform: translateY(variables.$fxSlideDist );
+  transform: translateY(variables.$fxSlideDist);
   animation-name: slideUp;
 }
 
@@ -236,7 +236,7 @@
   }
 
   50% {
-    opacity: 1.0;
+    opacity: 1;
   }
 
   100% {
