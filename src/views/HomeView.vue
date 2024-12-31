@@ -19,7 +19,7 @@
       <!-- player top header -->
       <header class="player-header flex-row flex-middle flex-stretch">
         <h2 class="player-logo text-clip flex-1">
-          <i class="ico ico-waveform"></i> &nbsp; <span>Cloudmu.id Radio</span>
+          <i class="ico ico-waveform"></i> &nbsp; <span>Web Radio</span>
         </h2>
         <button
           class="text-nowrap common-btn focus-text"
@@ -40,7 +40,7 @@
           </div>
           <div class="fx fx-slide-left fx-delay-1 push-bottom">
             This is a music streaming player for the stations provided by
-            Cloudmu.id Radio. Just pick a station from the sidebar to the right
+            Web Radio. Just pick a station from the sidebar to the right
             to start listening.
           </div>
           <div class="fx fx-slide-up fx-delay-2 pad-top">
