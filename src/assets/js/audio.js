@@ -94,17 +94,7 @@ export default {
     try {
       this._audio.pause();
     } catch (e) {
-      /** */
-    }
-    try {
-      this._audio.stop();
-    } catch (e) {
-      /** */
-    }
-    try {
-      this._audio.close();
-    } catch (e) {
-      /** */
+      console.info("Audio :", e);
     }
   },
 
@@ -115,7 +105,7 @@ export default {
 
     if (this._context.state === "suspended") {
       this._context.resume().then(() => {
-         
+
 				console.log("Audio context has been resumed.");
 			});
 		}

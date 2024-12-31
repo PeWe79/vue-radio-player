@@ -607,7 +607,7 @@ export default {
     // filter stations list
     stationsList() {
       let list = this.stations.slice();
-      let search = this.searchText
+      const search = this.searchText
         .replace(/[^\w\s-]+/g, "")
         .replace(/[\r\s\t\n]+/g, " ")
         .trim();
@@ -688,7 +688,7 @@ export default {
 
     // set an erro message
     setError(key, err) {
-      let errors = Object.assign({}, this.errors);
+      const errors = Object.assign({}, this.errors);
       errors[key] = String(err || "").trim();
       /* eslint-disable */
 			if (err) console.warn("ERROR(" + key + "):", err);
