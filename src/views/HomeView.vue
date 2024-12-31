@@ -809,7 +809,8 @@ export default {
       if (!station || !station.shortcode || !station.songsurl) return
       if (!this.isCurrentStation(station)) {
         this.songHist = []
-        ;(this.histSongs = []), (this.songNow = {})
+        this.histSongs = []
+        this.songNow = {}
         this.npData = {}
         this.nextSong = {}
         this.nextPl = {}
