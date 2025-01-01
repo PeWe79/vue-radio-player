@@ -13,6 +13,13 @@ Clone this repo:
 git clone https://github.com/PeWe79/vue-radio-player.git
 ```
 
+### Edit your AzuraCast server
+Edit config your AzuraCast in [config.js](https://github.com/PeWe79/vue-radio-player/blob/main/src/assets/js/config.js) files and edit line below :
+
+```sh
+apiBaseUrl: 'https://your-azuracast-server.com'
+```
+
 ## Recommended IDE Setup
 
 [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
