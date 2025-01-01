@@ -226,11 +226,6 @@
                       :src="songHistoryCoverArt[index]"
                       class="history-cover"
                     />
-                    <!-- <img
-                      class="history-cover"
-                      :alt="historyItem.song.title"
-                      :src="historyItem.song.art"
-                    /> -->
                   </div>
                   <div class="pad-left">
                     <div>
