@@ -103,6 +103,7 @@ export default {
 
     if (this._context.state === 'suspended') {
       this._context.resume().then(() => {
+        /* eslint-disable */
         console.log('Audio context has been resumed.')
       })
     }

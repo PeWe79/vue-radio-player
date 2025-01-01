@@ -1,5 +1,5 @@
 /**
- * Soma-FM API handler
+ * AzuraCast API handler
  */
 import axios from 'axios'
 import config from './config'
