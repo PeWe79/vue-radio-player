@@ -187,7 +187,7 @@
                     <div>
                       <span class="text-faded">From:</span>&nbsp;
                       <span class="text-bright">
-                        {{ nextSong.album || 'N/A' }}
+                        {{ nextAlbum || 'N/A' }}
                       </span>
                     </div>
                     <div>
@@ -247,7 +247,7 @@
                     <div>
                       <span class="text-faded">From:</span>&nbsp;
                       <span class="text-bright">
-                        {{ historyItem.song.album || 'N/A' }}
+                        {{ songHistoryAlbum[index] || 'N/A' }}
                       </span>
                     </div>
                     <div>
@@ -490,7 +490,9 @@ export default {
       nextPl: {},
       coverArtUrls: [],
       nextCoverArtUrls: [],
+      nextAlbum: {},
       songHistoryCoverArt: {},
+      songHistoryAlbum: {},
       favorites: [],
       errors: {},
       // timer stuff
@@ -840,6 +842,7 @@ export default {
     fetchNextCoverArt(nextSong) {
       this.fetchCoverArt(nextSong).then((coverArtData) => {
         this.nextCoverArtUrls = coverArtData.artworkUrl
+        this.nextAlbum = coverArtData.album
       })
     },
 
@@ -849,8 +852,10 @@ export default {
         this.fetchCoverArt(data.song).then((coverArtData) => {
           if (!this.songHistoryCoverArt) {
             this.songHistoryCoverArt = {}
+            this.songHistoryAlbum = {}
           }
           this.songHistoryCoverArt[index] = coverArtData.artworkUrl
+          this.songHistoryAlbum[index] = coverArtData.album
         })
       })
     },
@@ -940,11 +945,7 @@ export default {
 
     // set station route
     setRoute(route) {
-      route =
-        '/' +
-        String(route || '')
-          .replace(/^[#/]+|[/]+$/g, '')
-          .trim()
+      route = '/' + String(route || '').replace(/^[#/]+|[/]+$/g, '').trim()
       window.location.hash = route
       this.route = route
     },
