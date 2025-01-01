@@ -935,6 +935,7 @@ export default {
       if (play) {
         this.playStation(station)
       }
+      document.title = this.station.name
     },
 
     // set station route
