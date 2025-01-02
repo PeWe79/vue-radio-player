@@ -2,7 +2,11 @@
   <!-- app player container -->
   <main id="player-wrap" class="player-wrap" style="opacity: 0">
     <!-- bg absolute elements -->
-    <figure id="player-bg" class="player-bg" style="background-image: url(/img/bg.jpg)"></figure>
+    <figure
+      id="player-bg"
+      class="player-bg"
+      style="background-image: url(../assets/img/bg.jpg)"
+    ></figure>
     <canvas id="player-canvas" class="player-canvas" width="800" height="400"></canvas>
 
     <!-- main player layout -->
@@ -446,21 +450,20 @@
   <!-- player -->
 </template>
 
-<script>
-import favBtn from '@/components/favBtn.vue'
+<script lang="ts">
+import { defineComponent } from 'vue'
+import favBtn from '../components/favBtn.vue'
 import _api from '../assets/js/api'
 import _audio from '../assets/js/audio'
 import _scene from '../assets/js/scene'
 import _store from '../assets/js/store'
 import _utils from '../assets/js/utils'
 
-export default {
-  name: 'HomeView',
+export default defineComponent({
   components: {
     favBtn,
   },
-
-  data: () => {
+  data() {
     return {
       // toggles
       init: false,
@@ -940,7 +943,11 @@ export default {
 
     // set station route
     setRoute(route) {
-      route = '/' + String(route || '').replace(/^[#/]+|[/]+$/g, '').trim()
+      route =
+        '/' +
+        String(route || '')
+          .replace(/^[#/]+|[/]+$/g, '')
+          .trim()
       window.location.hash = route
       this.route = route
     },
@@ -1091,5 +1098,5 @@ export default {
     this.closeAudio()
     this.clearTimers()
   },
-}
+})
 </script>
