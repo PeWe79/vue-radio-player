@@ -450,20 +450,21 @@
   <!-- player -->
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
-import favBtn from '../components/favBtn.vue'
+<script>
+import favBtn from '@/components/favBtn.vue'
 import _api from '../assets/js/api'
 import _audio from '../assets/js/audio'
 import _scene from '../assets/js/scene'
 import _store from '../assets/js/store'
 import _utils from '../assets/js/utils'
 
-export default defineComponent({
+export default {
+  name: 'HomeView',
   components: {
     favBtn,
   },
-  data() {
+
+  data: () => {
     return {
       // toggles
       init: false,
@@ -1098,5 +1099,5 @@ export default defineComponent({
     this.closeAudio()
     this.clearTimers()
   },
-})
+}
 </script>
